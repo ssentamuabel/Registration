@@ -7,5 +7,6 @@
     <string name="confirm_password">Confirm Password</string>
     <string name="phone_number">Phone Number</string>
     <string name="submit_button">submit</string>
+    <string name="title_activity_dashboard">DashboardActivity</string>
 
 </resources>

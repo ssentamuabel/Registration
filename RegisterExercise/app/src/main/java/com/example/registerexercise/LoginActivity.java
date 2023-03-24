@@ -40,12 +40,21 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Toast.makeText(getApplicationContext(), userData.getUsername(), Toast.LENGTH_SHORT).show();
+                
 
-                Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
-//                intent.putStringArrayListExtra("finaldata",userData);
-                intent.putExtra("finaldata", userData);
-                startActivity(intent);
+
+                if(userData.getUsername().equals(String.valueOf(username.getText())) && userData.getPassword().equals(String.valueOf(password.getText()))){
+                    Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+                    Toast.makeText(getApplicationContext(), userData.getUsername()+ " thanks for registering.", Toast.LENGTH_SHORT).show();
+                    intent.putExtra("finaldata", userData);
+                    startActivity(intent);
+
+                    getSupportActionBar().setTitle("login");
+                }else{
+                    Toast.makeText(getApplicationContext(), "Wrong password or username ", Toast.LENGTH_LONG).show();
+                }
+
+
 
 
             }
